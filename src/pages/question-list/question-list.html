@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Question List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <!-- Show loading text to user -->
+  <ng-template [ngIf]="isQuestionLoading">
+    <p class="text-center">Question List Loading...</p>    
+  </ng-template>
+
+  <!-- Show no records found error to user -->
+  <ng-template [ngIf]="isQuestionCountZero">
+    <p class="help-error">There is no any question listed for {{ categoryName | uppercase }} category</p>
+  </ng-template>
+
+  <ng-template [ngIf]="! isQuestionCountZero">
+    <ion-list>
+      <ion-item *ngFor="let question of questionList" (click)="viewInAppBrowser(question.question_file_name)">
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/question-icon.png">
+        </ion-thumbnail>
+        <h2>{{ question.question_title | titlecase }}</h2>
+        <div>
+          <ion-icon md="md-calendar"></ion-icon> {{ question.question_published_date | date: 'medium' }}
+        </div>
+        <div>
+          <ion-icon md="md-pricetag"></ion-icon> Tags: {{ question.question_tags | titlecase }}
+        </div>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+
+</ion-content>

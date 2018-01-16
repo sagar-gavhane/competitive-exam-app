@@ -1,0 +1,8 @@
+page-audio-list {  
+  .audio-list-thumbnail__desc {
+    text-transform: lowercase;
+  }
+  .audio-list-thumbnail__desc:first-letter {
+    text-transform: uppercase;
+  }
+}

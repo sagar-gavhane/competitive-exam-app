@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ categoryName | uppercase }} Audio List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>  
+
+  <!-- Audio List Loading -->
+  <ng-template [ngIf]="isAudioLoading">
+    <p class="text-center">Audio List Loading...</p>
+  </ng-template>
+
+  <!-- Audio List Contain Zero Length -->
+  <ng-template [ngIf]="isAudioCountZero">
+    <p class="help-error">There is no any audio listed for {{ categoryName | uppercase }} category.</p>
+  </ng-template>
+
+  <!-- If audio list greater than zero -->
+  <ng-template [ngIf]="! isAudioCountZero">
+    <ion-list>
+
+      <ion-item class="audio-list-block" *ngFor="let audio of audioList" (click)="pushPage(audio.audio_id)">
+        <ion-thumbnail item-start>
+          <img class="audio-list-thumbnail__img" src="assets/imgs/music-icon.png">
+        </ion-thumbnail>
+        <h2 class="audio-list-thumbnail__title">{{ audio.audio_title | titlecase }}</h2>
+        <p class="audio-list-thumbnail__desc">{{ audio.audio_desc }}</p>
+        <p class="audio-list-thumbnail__details">
+          <ion-icon md="md-calendar"></ion-icon> {{ audio.audio_published_date | date: 'medium' }}
+        </p>
+        <p class="audio-list-thumbnail-tag-cat">
+          <ion-icon md="md-pricetag"></ion-icon> Tags: {{ audio.audio_tags | titlecase }}
+        </p>
+      </ion-item>
+
+    </ion-list>
+  </ng-template>
+</ion-content>

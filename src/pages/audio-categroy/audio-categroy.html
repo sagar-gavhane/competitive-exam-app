@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Audio Categroy</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <ion-list>
+    <ion-item *ngFor="let category of categoryList" (click)="pushPage(category)">
+      <ion-icon name="musical-notes" item-start></ion-icon>
+      <h3>{{ category | uppercase }}</h3>
+      <button ion-button clear item-end>Listen</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Job List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ng-template [ngIf]="isLoading">
+    <p class="text-center">Loading....</p>
+  </ng-template>
+
+  <ng-template [ngIf]="isDataCountZero">
+    <p class="help-error">There is no any records listed for selected job.</p>
+  </ng-template>
+
+   <ng-template [ngIf]="! isDataCountZero">
+    <ion-list *ngFor="let job of jobList" (click)="viewInAppBrowser(job.job_file_name)">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/job-icon.png">
+        </ion-thumbnail>
+        <h2>{{ job.job_title | titlecase }}</h2>
+        <p>{{ job.job_desc | titlecase }}</p>
+        <p>
+          <ion-icon md="md-calendar"></ion-icon> {{ job.job_published_date | date: 'medium' }}
+        </p>
+        <p>
+          <ion-icon md="md-pricetag"></ion-icon> Tags: {{ job.job_tags | titlecase }}
+        </p>
+      </ion-item>
+    </ion-list>
+   </ng-template>
+</ion-content>

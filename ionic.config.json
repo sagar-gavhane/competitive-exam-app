@@ -1,0 +1,8 @@
+{
+  "name": "study-baba-beta",
+  "app_id": "7802f542",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Job Category</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngFor="let category of categoryList" (click)="pushPage(category)">
+      <ion-icon name="md-briefcase" item-start></ion-icon>
+      <h3>{{ category }}</h3>
+      <button ion-button clear item-end>Read</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

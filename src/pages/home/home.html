@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid no-padding>
+    <ion-row>
+
+      <!-- video icon -->
+      <ion-col>
+        <div class="menu-block menu-block--video" (click)="pushPage('video-category-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/video.png">
+            <span class="menu-block__title">Video</span>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- audio icon -->
+      <ion-col>
+        <div class="menu-block menu-block--audio" (click)="pushPage('audio-category-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/audio.png">
+            <span class="menu-block__title">Audio</span>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- notes icon -->
+      <ion-col>
+        <div class="menu-block menu-block--notes" (click)="pushPage('notes-category-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/notes.png">
+            <span class="menu-block__title">Notes</span>
+          </div>
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+
+      <!-- question paper -->
+      <ion-col>
+        <div class="menu-block menu-block--questions" (click)="pushPage('question-category-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/questions.png">
+            <span class="menu-block__title">Questions</span>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- syllabus -->
+      <ion-col>
+        <div class="menu-block menu-block--syllabus" (click)="pushPage('syllabus-category-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/syllabus.png">
+            <span class="menu-block__title">Syllabus</span>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- maps -->
+      <ion-col>
+        <div class="menu-block menu-block--maps" (click)="pushPage('google-map-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/maps.png">
+            <span class="menu-block__title">Maps</span>
+          </div>
+        </div>
+      </ion-col>
+
+    </ion-row>
+    <!-- ./second row -->
+
+    <!-- third row -->
+    <ion-row>
+
+      <!-- jobs -->
+      <ion-col>
+        <div class="menu-block menu-block--jobs" (click)="pushPage('jobs-category-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/jobs.png">
+            <span class="menu-block__title">Jobs</span>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- view advertisement -->
+      <ion-col>
+        <div class="menu-block menu-block--view-ads" (click)="pushPage('ads-view-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/view-ads.png">
+            <span class="menu-block__title">View Ads</span>
+          </div>
+        </div>
+      </ion-col>
+
+      <!-- send Advertisement -->
+      <ion-col>
+        <div class="menu-block menu-block--send-ads" (click)="pushPage('ads-send-page')">
+          <div class="menu-block__content">
+            <img class="menu-block__icon" src="./assets/imgs/menu-icon/send-ads.png">
+            <span class="menu-block__title">Send Ads</span>
+          </div>
+        </div>
+      </ion-col>
+
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

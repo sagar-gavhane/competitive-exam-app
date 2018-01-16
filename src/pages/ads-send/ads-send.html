@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ads Send</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Full Name</ion-label>
+      <ion-input type="text" [(ngModel)]="fullName"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Contact Number</ion-label>
+      <ion-input type="text" [(ngModel)]="contactNumber"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Email Address</ion-label>
+      <ion-input type="email" [(ngModel)]="emailAddress"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Message</ion-label>
+      <ion-textarea rows="5" [(ngModel)]="message"></ion-textarea>
+    </ion-item>
+
+    <div padding>
+      <button ion-button color="primary" block (click)="sendAds($event)">Send Ad</button>
+    </div>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Audio Listen</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+  <ng-template [ngIf]="isAudioLoading">
+    <p class="text-center">Audio Player Loading...</p>
+  </ng-template>
+
+  <ng-template [ngIf]="isAudioCountZero">
+    <p class="help-error">Something went wrong. Unable to play audio file.</p>
+  </ng-template>
+
+  <ng-template [ngIf]="!isAudioCountZero">
+
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col *ngFor="let audio of audioData">
+          <div class="audio-player-block">
+            <div class="audio-player-block__audio-player-image">
+              <img src="assets/imgs/audio-player.png">
+            </div>
+            <div class="audio-player-block__audio-player-controls">
+              <audio autoplay="true" controls="controls" id="audio_player">
+                <source src="{{ 'http://smart-admin.000webhostapp.com/assets/resource/audio/'+ audio.audio_file_name }}" type="audio/mpeg" />
+              </audio>
+            </div>
+            <div padding class="audio-player-block__audio-details">
+              <h4 class="audio-watch-title">{{ audio.audio_title | titlecase }}</h4>
+              <p>
+                <ion-icon name="calendar"></ion-icon> Published On: {{ audio.audio_added_date | date: 'medium' }}</p>
+              <p>
+                <ion-icon name="pricetags"></ion-icon> Tags: {{ audio.audio_tags | titlecase }}</p>
+              <p>
+                <ion-icon name="star"></ion-icon> Category: {{ audio.audio_category | uppercase }}</p>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ng-template>
+
+</ion-content>

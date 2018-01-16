@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Video Category</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  
+  <div *ngIf="categoryLists.length == 0; else pageContent">
+    <p class="help-error">There is no any category listed for video's</p>
+  </div>
+
+  <ng-template #pageContent>
+    <ion-list>
+      <ion-item *ngFor="let categoryList of categoryLists" (click)="pushPage('video-list-page', categoryList)">
+        <ion-icon name="logo-youtube" item-start></ion-icon>
+        <h3>{{ categoryList | uppercase }}</h3>
+        <button ion-button clear item-end>Watch</button>
+      </ion-item>
+    </ion-list>
+  </ng-template>
+
+</ion-content>

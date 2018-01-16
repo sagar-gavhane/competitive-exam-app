@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Video Watch</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-grid no-padding>
+
+    <div *ngIf="isVideoLoading else videoContainer">
+      <p class="text-center">Video Loading...</p>
+    </div>
+
+    <ng-template #videoContainer>
+      <ion-row>
+        <ion-col>
+          <div class="video-container" *ngFor="let video of videoData">
+            <iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(videoSource)' frameborder="0" width="560" height="315" allowfullscreen="true" webkitallowfullscreen mozallowfullscreen allowfullscreen> </iframe>
+          </div>
+          <div class="video-watch" *ngFor="let video of videoData">
+            <h4 class="video-watch-title">{{ video.video_title | titlecase }}</h4>
+            <p>Published On: {{ video.video_published_date | date :'medium' }}</p>
+            <p>{{ video.video_desc | titlecase }}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ng-template>
+
+    <div *ngIf="isVideoUnavailable">
+      Something went wrong!!. Video unavailable to watch
+    </div>
+
+  </ion-grid>
+</ion-content>

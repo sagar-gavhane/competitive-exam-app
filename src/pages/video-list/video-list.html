@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ categoryName | uppercase }} Video List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  
+  <div *ngIf="isVideoLoading else videoContainer">
+    <p class="text-center">Video List Loading...</p>
+  </div>
+  
+  <ng-template #videoContainer>
+    
+    <p class="help-error" *ngIf="isVideoCountZero else videoContent">Oops!! There is no any video listed for {{ categoryName | uppercase }} category.</p>
+    
+    <ng-template #videoContent>
+      <ion-list>
+        <ion-item class="video-list-block" *ngFor="let videoList of videoList" (click)="pushPage(videoList.video_id)">
+          <ion-thumbnail item-start>
+            <img class="video-list-thumbnail__img" src="https://img.youtube.com/vi/{{ videoList.video_youtube_id }}/mqdefault.jpg">
+          </ion-thumbnail>
+          <h2 class="video-list-thumbnail__title">{{ videoList.video_title | titlecase }}</h2>
+          <p class="video-list-thumbnail__desc">{{ videoList.video_desc | titlecase }}</p>
+          <p class="video-list-thumbnail__details">
+            <ion-icon md="md-calendar"></ion-icon> {{ videoList.video_published_date | date: 'medium' }}
+          </p>
+          <p class="video-list-thumbnail-tag-cat">
+            <ion-icon md="md-pricetag"></ion-icon> Tags: {{ videoList.video_tags | titlecase }}
+          </p>          
+        </ion-item>
+      </ion-list>
+    </ng-template>
+  </ng-template>
+</ion-content>

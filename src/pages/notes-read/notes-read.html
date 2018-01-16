@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notes Read</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <!-- Show loading text to user untill get response from serve -->
+  <ng-template [ngIf]="isNotesLoading">
+    <p class="text-center">Loading...</p>
+  </ng-template>
+
+  <!-- Show no records found error to user -->
+  <ng-template [ngIf]="isNotesReadable">
+    <p class="help-error">There is no any notes found for selected notes. Please try again.</p>
+  </ng-template>
+
+  <!-- Show readable notes to user -->
+  <ng-template [ngIf]="! isNotesReadable">
+    <ion-card *ngFor="let note of notesData">
+      <ion-card-header text-wrap>
+        <strong>{{ note.note_title || titlecase }}</strong>
+      </ion-card-header>
+      <ion-card-content>
+        <div>
+          <ion-icon name="calendar"></ion-icon> {{ note.note_published_date | date:'medium' }}
+        </div>
+        <div>
+          <ion-icon name="pricetags"></ion-icon> {{ note.note_tags | titlecase }}
+        </div>
+        <div>
+          <p>{{ note.note_desc }}</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+</ion-content>

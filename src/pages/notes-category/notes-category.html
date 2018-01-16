@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notes Category</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list>
+    <ion-item *ngFor="let category of categoryList" (click)="pushPage(category)">
+      <ion-icon name="md-bookmark" item-start></ion-icon>
+      <h3>{{ category | uppercase }}</h3>
+      <button ion-button clear item-end>View</button>
+    </ion-item>
+  </ion-list>
+</ion-content>

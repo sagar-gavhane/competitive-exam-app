@@ -1,0 +1,25 @@
+page-home {
+  .menu-block {
+    height: 150px;
+    border: 1px solid #f4f4f4; // all side border
+    .menu-block__icon {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .menu-block__title {
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      color: #333333;
+      font-weight: 700;
+      font-size: 100%;
+      margin-top: 5px; // letter-spacing: 2px;
+      width: 100%;
+      text-align: center;
+      display: block;
+    }
+  }
+}

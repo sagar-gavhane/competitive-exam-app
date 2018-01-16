@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Ads View</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ng-template [ngIf]="isLoading">
+    <p class="text-center">Loading...</p>
+  </ng-template>
+
+  <ng-template [ngIf]="isDataCountZero">
+    <p class="help-error">No ads found.</p>
+  </ng-template>
+
+  <ng-template [ngIf]="! isDataCountZero">
+    <ion-list>
+      <ion-card *ngFor="let ads of adsData">
+        <img src="http://smart-admin.000webhostapp.com/assets/resource/ads/image/{{ ads.send_ad_file_name }}" />
+        <ion-card-content>
+          <ion-card-title>
+            {{ ads.send_ad_title | titlecase }}
+          </ion-card-title>
+          <p>
+            {{ ads.send_ad_desc | titlecase }}
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Notes List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <!-- Show loading text to user untill get response from server -->
+  <ng-template [ngIf]="isNotesLoading">
+    <p class="text-center">Notes List Loading....</p>
+  </ng-template>
+
+  <!-- Show no records found error to user -->
+  <ng-template [ngIf]="isNotesCountZero">
+    <p class="help-error">There is no any notes found of {{ categoryName | uppercase }} category.</p>
+  </ng-template>
+
+  <!-- Show notes list -->
+  <ng-template [ngIf]="! isNotesCountZero">
+
+    <ion-list>
+      <ion-item *ngFor="let note of notesList" (click)="pushPage(note.note_id)">
+        <ion-thumbnail item-start>
+          <img class="audio-list-thumbnail__img" src="assets/imgs/notes-icon.png">
+        </ion-thumbnail>
+        <h2 class="audio-list-thumbnail__title">{{ note.note_title | titlecase }}</h2>
+        <p class="audio-list-thumbnail__details">
+          <ion-icon md="md-calendar"></ion-icon> {{ note.note_published_date | date: 'medium' }}
+        </p>
+        <p class="audio-list-thumbnail-tag-cat">
+          <ion-icon md="md-pricetag"></ion-icon> Tags: {{ note.note_tags | titlecase }}
+        </p>
+      </ion-item>
+    </ion-list>
+
+  </ng-template>
+</ion-content>

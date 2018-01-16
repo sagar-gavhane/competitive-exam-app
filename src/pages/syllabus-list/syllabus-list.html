@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Syllabus List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <!-- Show loading text -->
+  <ng-template [ngIf]="isLoading">
+    <p class="text-center">Loading...</p>
+  </ng-template>
+
+  <!-- Show data not found text -->
+  <ng-template [ngIf]="! isDataReady">
+    <p class="help-error">There is no any records found for {{categoryName | uppercase }} category.</p>
+  </ng-template>
+
+  <!-- Show syllabus list -->
+  <ng-template [ngIf]="isDataReady">
+    <ion-item *ngFor="let syllabus of syllabusList" (click)="viewInAppBrowser(syllabus.syllabus_file_name)">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/syllabus-icon.png">
+      </ion-thumbnail>
+      <h2 class="syllabus-list-thumbnail__title">{{ syllabus.syllabus_title | titlecase }}</h2>
+      <div>
+        <ion-icon md="md-calendar"></ion-icon> {{ syllabus.syllabus_published_date | date: 'medium' }}
+      </div>
+      <div>
+        <ion-icon md="md-pricetag"></ion-icon> Tags: {{ syllabus.syllabus_tags | titlecase }}
+      </div>
+    </ion-item>
+  </ng-template>
+</ion-content>
