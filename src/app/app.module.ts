@@ -30,6 +30,7 @@ import { JobListPage } from './../pages/job-list/job-list';
 import { GoogleMapPage } from '../pages/google-map/google-map';
 import { AdsViewPage } from '../pages/ads-view/ads-view';
 import { AdsSendPage } from '../pages/ads-send/ads-send';
+import { AdsSentSuccessPage } from '../pages/ads-sent-success/ads-sent-success';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { AdsSendPage } from '../pages/ads-send/ads-send';
     JobListPage,
     GoogleMapPage,
     AdsViewPage,
-    AdsSendPage
+    AdsSendPage,
+    AdsSentSuccessPage
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ import { AdsSendPage } from '../pages/ads-send/ads-send';
     JobListPage,
     GoogleMapPage,
     AdsViewPage,
-    AdsSendPage
+    AdsSendPage,
+    AdsSentSuccessPage
   ],
   providers: [
     StatusBar,

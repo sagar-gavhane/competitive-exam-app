@@ -5,31 +5,34 @@
 </ion-header>
 
 <ion-content no-padding>
-  <ion-list>
+  <form method="post">
 
-    <ion-item>
-      <ion-label floating>Full Name</ion-label>
-      <ion-input type="text" [(ngModel)]="fullName"></ion-input>
-    </ion-item>
+    <ion-list>
 
-    <ion-item>
-      <ion-label floating>Contact Number</ion-label>
-      <ion-input type="text" [(ngModel)]="contactNumber"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>Full Name</ion-label>
+        <ion-input type="text" name="fullName" [(ngModel)]="fullName"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Email Address</ion-label>
-      <ion-input type="email" [(ngModel)]="emailAddress"></ion-input>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>Contact Number</ion-label>
+        <ion-input type="text" name="contactNumber" [(ngModel)]="contactNumber"></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label floating>Message</ion-label>
-      <ion-textarea rows="5" [(ngModel)]="message"></ion-textarea>
-    </ion-item>
+      <ion-item>
+        <ion-label floating>Email Address</ion-label>
+        <ion-input type="email" name="email" [(ngModel)]="emailAddress"></ion-input>
+      </ion-item>
 
-    <div padding>
-      <button ion-button color="primary" block (click)="sendAds($event)">Send Ad</button>
-    </div>
+      <ion-item>
+        <ion-label floating>Message</ion-label>
+        <ion-textarea rows="5" name="messsage" [(ngModel)]="message"></ion-textarea>
+      </ion-item>
 
-  </ion-list>
+      <div padding>
+        <button ion-button color="primary" block (click)="sendAds($event)">Send Ad</button>
+      </div>
+
+    </ion-list>
+  </form>
 </ion-content>
