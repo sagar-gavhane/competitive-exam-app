@@ -19,7 +19,7 @@
   <ng-template [ngIf]="! isNotesCountZero">
 
     <ion-list>
-      <ion-item *ngFor="let note of notesList" (click)="pushPage(note.note_id)">
+      <ion-item *ngFor="let note of notesList" (click)="viewInAppBrowser(note.note_file_name)">
         <ion-thumbnail item-start>
           <img class="audio-list-thumbnail__img" src="assets/imgs/notes-icon.png">
         </ion-thumbnail>

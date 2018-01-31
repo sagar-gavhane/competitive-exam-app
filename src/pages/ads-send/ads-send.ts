@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Keyboard } from '@ionic-native/keyboard';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { AdsSentSuccessPage } from './../ads-sent-success/ads-sent-success';
@@ -14,8 +15,14 @@ export class AdsSendPage {
   emailAddress: string;
   message: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http, public keyboard: Keyboard) {
+
   }
+
+  showKeyboard() {
+    this.keyboard.show();
+    console.log('show keyboard');
+  };
 
   ionViewDidLoad() { }
 

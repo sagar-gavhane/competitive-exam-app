@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Keyboard } from '@ionic-native/keyboard';
 
 // import pipe
 import { TitlecasePipe } from '../pipes/titlecase/titlecase';
@@ -90,6 +91,7 @@ import { AdsSentSuccessPage } from '../pages/ads-sent-success/ads-sent-success';
     StatusBar,
     SplashScreen,
     InAppBrowser,
+    Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

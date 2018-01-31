@@ -4,28 +4,26 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content no-padding>
-  <form method="post">
-
+<ion-content padding>
     <ion-list>
 
       <ion-item>
-        <ion-label floating>Full Name</ion-label>
-        <ion-input type="text" name="fullName" [(ngModel)]="fullName"></ion-input>
+        <ion-label stacked>Full Name</ion-label>
+        <ion-input type="text" name="fullName" [(ngModel)]="fullName" autocomplete="on" autocorrect="on"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Contact Number</ion-label>
+        <ion-label stacked>Contact Number</ion-label>
         <ion-input type="text" name="contactNumber" [(ngModel)]="contactNumber"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Email Address</ion-label>
+        <ion-label stacked>Email Address</ion-label>
         <ion-input type="email" name="email" [(ngModel)]="emailAddress"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label floating>Message</ion-label>
+        <ion-label stacked>Message</ion-label>
         <ion-textarea rows="5" name="messsage" [(ngModel)]="message"></ion-textarea>
       </ion-item>
 
@@ -34,5 +32,5 @@
       </div>
 
     </ion-list>
-  </form>
+
 </ion-content>
